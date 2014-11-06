@@ -1,6 +1,13 @@
 __author__ = 'Igor Sorokin'
 __email__ = 'igor.sorokin66@gmail.com'
-__status__ = 'Solved- Problem from Cracking the Code Interview'
+__status__ = 'Solved'
+'''
+Problem:
+Given an image represented by an NxN matrix,
+rotate the matrix by 90 degrees.
+Source:
+Cracking the Code Interview 4ed Page 48 problem 1.6
+'''
 
 size_col = 5
 size_row = 5
