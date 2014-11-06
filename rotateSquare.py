@@ -32,22 +32,22 @@ start_row = 0
 end_col = size_col-1
 end_row = size_row-1
 
-for col in range(inner_squares):
-    for row in range(0 + col, size_row - col - 1):
+for offset_col in range(inner_squares):
+    for offset_row in range(0 + offset_col, size_row - offset_col - 1):
         #ROTATION 1
-        save = matrix[start_row + row][end_col - col]
-        matrix[start_row + row][end_col - col] = matrix[col][row]
+        save = matrix[start_row + offset_row][end_col - offset_col]
+        matrix[start_row + offset_row][end_col - offset_col] = matrix[offset_col][offset_row]
         printMatrix()
         #ROTATION 2
         save2 = save
-        save = matrix[end_row - col][end_col - row]
-        matrix[end_row - col][end_col - row] = save2
+        save = matrix[end_row - offset_col][end_col - offset_row]
+        matrix[end_row - offset_col][end_col - offset_row] = save2
         printMatrix()
         #ROTATION 3
         save2 = save
-        save = matrix[end_row - row][start_col + col]
-        matrix[end_row - row][start_col + col] = save2
+        save = matrix[end_row - offset_row][start_col + offset_col]
+        matrix[end_row - offset_row][start_col + offset_col] = save2
         printMatrix()
         #ROTATION 4
-        matrix[start_row + col][start_col + row] = save
+        matrix[start_row + offset_col][start_col + offset_row] = save
         printMatrix()
