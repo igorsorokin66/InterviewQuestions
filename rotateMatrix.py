@@ -1,6 +1,6 @@
 __author__ = 'Igor Sorokin'
 __email__ = 'igor.sorokin66@gmail.com'
-__status__ = 'Solved'
+__status__ = 'Completed'
 '''
 Problem:
 Given an image represented by an NxN matrix,
@@ -9,8 +9,8 @@ Source:
 Cracking the Code Interview 4ed Page 48 problem 1.6
 '''
 
-size_col = 5
-size_row = 5
+size_col = 10
+size_row = 10
 matrix = [[0 for x in range(size_col)] for y in range(size_row)]
 
 def initializeMatrix():
@@ -41,6 +41,7 @@ end_row = size_row-1
 
 for offset_col in range(inner_squares):
     for offset_row in range(0 + offset_col, size_row - offset_col - 1):
+        printMatrix()
         #ROTATION 1
         save = matrix[start_row + offset_row][end_col - offset_col]
         matrix[start_row + offset_row][end_col - offset_col] = matrix[offset_col][offset_row]
@@ -57,4 +58,3 @@ for offset_col in range(inner_squares):
         printMatrix()
         #ROTATION 4
         matrix[start_row + offset_col][start_col + offset_row] = save
-        printMatrix()
